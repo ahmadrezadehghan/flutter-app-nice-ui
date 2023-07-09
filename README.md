@@ -9,6 +9,26 @@ It consists of four parts: login/registration, profile and settings,
 the home page which contains nine different parts for the purpose of training and building different parts of the software, 
 and at the end of the search part that includes a search page similar to social networks.
 
+..whats on this package?
+⭐️login/Register page
+⭐️homescreen
+⭐️searchscreen
+⭐️peofilescreen
+⭐️settings
+⭐️theme
+⭐️darkmode/lightmode
+⭐️notificationopsions
+⭐️ticketing/massaging panel
+⭐️counseling panel
+⭐️exam panel
+⭐️learning panel
+⭐️about app panel
+⭐️logs panel
+⭐️news panel
+⭐️projects
+⭐️resume
+⭐️many more!
+
 Lessons Learned
 How to use Flutter themes.
 How to create multi-page apps using Flutter Routes and Navigator.
@@ -46,7 +66,12 @@ Packages Used
   flutter_colorpicker: ^1.0.3
   shared_preferences: ^2.2.0
 
+Before run project, execute commands:
 
+flutter clean
+.flutter pub get
+.flutter pub run build_runner build or flutter pub run build_runner build --delete-conflicting-outputs
+.flutter run (if needed)
 
 my email: cyberskycoder@gmail.com
 License
