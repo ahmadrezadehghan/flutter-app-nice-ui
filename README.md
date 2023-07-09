@@ -17,7 +17,6 @@ and at the end of the search part that includes a search page similar to social 
 - ⭐️homescreen
 - ⭐️searchscreen
 - ⭐️peofilescreen
-- 
 
 - ⭐️settings
 - ⭐️theme
