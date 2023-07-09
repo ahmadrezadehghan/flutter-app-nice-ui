@@ -1,0 +1,396 @@
+import 'dart:io';
+
+import 'package:dropdown_search/dropdown_search.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:persian_fonts/persian_fonts.dart';
+import 'package:syncfusion_flutter_pdf/pdf.dart';
+
+import '../../theme/color.dart';
+import '../../widgets/buttons.dart';
+import '../../widgets/card_widget.dart';
+import '../../widgets/text.dart';
+import 'home-learning.dart';
+
+class new_file_learn extends StatefulWidget {
+  @override
+  _new_file_learnState createState() => _new_file_learnState();
+}
+
+class _new_file_learnState extends State<new_file_learn> {
+  List<String> horof = ["a", "b", "c", "d", "etc"];
+  List<File> _images = [];
+  String dasteha = 'Select ad category';
+  Future getImage(ImageSource source) async {
+    final pickedFile = await ImagePicker().getImage(source: source);
+
+    setState(() {
+      if (pickedFile != null) {
+        _images.add(File(pickedFile.path));
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+  Future createPdf() async {
+    final pdf = PdfDocument();
+    final page = pdf.pages.add();
+    final image = MemoryImage(await _images.first.readAsBytes());
+    page.graphics.drawImage(
+        PdfBitmap(image as List<int>),
+        Rect.fromLTWH(
+            0, 0, page.getClientSize().width, page.getClientSize().height));
+    final bytes = pdf.save();
+    await File('example.pdf').writeAsBytes(bytes as List<int>);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 35,
+          backgroundColor: t,
+          title: App_bar_kala(),
+        ),
+        backgroundColor: b,
+        body: DefaultTextStyle(
+          style: Theme.of(context).textTheme.bodyMedium!,
+          child: LayoutBuilder(
+            builder:
+                (BuildContext context, BoxConstraints viewportConstraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                    constraints: const BoxConstraints(),
+                    child: Column(
+                      children: [
+                        Column(children: [
+                          text_fild_me_3(
+                            onChanged_: (val) {
+                              setState(() {});
+                            },
+                            label_: "file name",
+                            hiden_text:
+                                "Example: Session 7 - The Secret of Correct Management",
+                            keyboardType_: TextInputType.text,
+                            icon_: Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            act_icon: true,
+                          ),
+                          text_fild_me_3(
+                            onChanged_: (val) {
+                              setState(() {});
+                            },
+                            label_: "Teaching content title",
+                            hiden_text:
+                                "Example: comprehensive accounting management training",
+                            keyboardType_: TextInputType.number,
+                            icon_: Icon(
+                              Icons.info,
+                              color: Colors.red,
+                            ),
+                            act_icon: false,
+                          )
+                        ]),
+                        text_fild_me_multi_line(
+                          line_: 4,
+                          onChanged_: (val) {
+                            setState(() {});
+                          },
+                          label_:
+                              "Additional details / full text of the training",
+                          hiden_text: " ",
+                          keyboardType_: TextInputType.text,
+                          icon_: Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          act_icon: true,
+                        ),
+                        card_sade(
+                          w_: MediaQuery.of(context).size.width - 40,
+                          h_: 80,
+                          color_: w,
+                          crop_: 10,
+                          child_: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text("Teacher's Choice",
+                                  style: PersianFonts.Shabnam.copyWith(
+                                      fontSize: 13.0, color: t)),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              DropdownSearch<String>(
+                                onChanged: (val) {},
+                                clearButtonProps: ClearButtonProps(
+                                    icon: Icon(
+                                      Icons.clear,
+                                      color:
+                                          const Color.fromARGB(255, 78, 78, 78),
+                                      size: 30,
+                                    ),
+                                    isVisible: false),
+                                items: horof,
+                                dropdownButtonProps: DropdownButtonProps(
+                                    color:
+                                        const Color.fromARGB(255, 61, 61, 61)),
+                                popupProps: PopupProps.menu(
+                                  showSearchBox: true,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 0,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: b,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                ),
+                                width: MediaQuery.of(context).size.width * 0.7,
+                                height: 220,
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                            height: 100,
+                                            width: 130,
+                                            decoration: BoxDecoration(
+                                              color: Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              borderRadius:
+                                                  BorderRadius.circular(0),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                      255, 167, 167, 167),
+                                                  blurRadius: 4,
+                                                  offset: Offset(
+                                                      4, 8), // Shadow position
+                                                ),
+                                              ],
+                                            ),
+                                            child: IconButton(
+                                              icon: Icon(Icons.camera_alt),
+                                              onPressed: () =>
+                                                  getImage(ImageSource.camera),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                            height: 100,
+                                            width: 130,
+                                            decoration: BoxDecoration(
+                                              color: Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              borderRadius:
+                                                  BorderRadius.circular(0),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                      255, 167, 167, 167),
+                                                  blurRadius: 4,
+                                                  offset: Offset(
+                                                      4, 8), // Shadow position
+                                                ),
+                                              ],
+                                            ),
+                                            child: IconButton(
+                                              icon: Icon(Icons.image),
+                                              onPressed: () =>
+                                                  getImage(ImageSource.gallery),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                            height: 100,
+                                            width: 130,
+                                            decoration: BoxDecoration(
+                                              color: Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              borderRadius:
+                                                  BorderRadius.circular(0),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                      255, 167, 167, 167),
+                                                  blurRadius: 4,
+                                                  offset: Offset(
+                                                      4, 8), // Shadow position
+                                                ),
+                                              ],
+                                            ),
+                                            child: IconButton(
+                                              icon: Icon(Icons.picture_as_pdf),
+                                              onPressed: () => createPdf(),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: Container(
+                                            height: 100,
+                                            width: 130,
+                                            decoration: BoxDecoration(
+                                              color: Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              borderRadius:
+                                                  BorderRadius.circular(0),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: const Color.fromARGB(
+                                                      255, 167, 167, 167),
+                                                  blurRadius: 4,
+                                                  offset: Offset(
+                                                      4, 8), // Shadow position
+                                                ),
+                                              ],
+                                            ),
+                                            child: IconButton(
+                                              icon:
+                                                  Icon(Icons.insert_drive_file),
+                                              onPressed: () {},
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                    // Padding(
+                                    //   padding: const EdgeInsets.all(8.0),
+                                    //   child: GridView.builder(
+                                    //     itemCount: _images.length,
+                                    //     gridDelegate:
+                                    //         SliverGridDelegateWithFixedCrossAxisCount(
+                                    //       crossAxisCount: 3,
+                                    //     ),
+                                    //     itemBuilder:
+                                    //         (BuildContext context, int index) {
+                                    //       return Image.file(_images[index]);
+                                    //     },
+                                    //   ),
+                                    // ),
+                                  ],
+                                ),
+                              ),
+                            ]),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Center(
+                          child: Container(
+                            height: 200,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            color: const Color.fromARGB(255, 255, 255, 255),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: GridView.builder(
+                                itemCount: _images.length,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 4,
+                                  mainAxisSpacing: 1,
+                                  crossAxisSpacing: 1,
+                                ),
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Image.file(_images[index]);
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        btn_me4(
+                          size_font: 14,
+                          text_: "Register new training file",
+                          color_: Colors.greenAccent,
+                          width_: MediaQuery.of(context).size.width - 20,
+                          height_: 60,
+                          onPressed: () {
+                            Get.off(home_page_learn());
+                          },
+                        ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                      ],
+                    )),
+              );
+            },
+          ),
+        ));
+  }
+}
+
+class App_bar_kala extends StatelessWidget {
+  const App_bar_kala({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          height: 100,
+        ),
+        Align(
+          alignment: Alignment.center,
+          child: Text("New Training Course",
+              style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 15.0,
+                  color: Colors.white70)),
+        ),
+        Align(
+          alignment: Alignment.topLeft,
+          child: TextButton(
+            onPressed: () {},
+            child: const Text("",
+                style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 13.0,
+                    color: Colors.green)),
+          ),
+        )
+      ],
+    );
+  }
+}
