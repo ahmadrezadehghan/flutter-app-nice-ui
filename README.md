@@ -3,13 +3,14 @@
 
 ⭐️this is a flutter experimental app⭐️
 
-This repository is about a useful application that has many educational aspects.
+>This repository is about a useful application that has many educational aspects.
 “This software is designed for Flutter training purposes and does not have a backend.
 It consists of four parts: login/registration, profile and settings, 
 the home page which contains nine different parts for the purpose of training and building different parts of the software, 
 and at the end of the search part that includes a search page similar to social networks.
 
 ..whats on this package?
+
 ⭐️login/Register page
 
 ⭐️homescreen
@@ -46,7 +47,11 @@ and at the end of the search part that includes a search page similar to social 
 
 ⭐️many more!
 
+
+![2023-07-09 23_24_17-Greenshot](https://github.com/ahmadrezadehghan/experimental/assets/138360464/dc046269-6c28-43c9-ac23-b3910f05beb3)
+
 Lessons Learned
+
 How to use Flutter themes.
 
 How to create multi-page apps using Flutter Routes and Navigator.
@@ -67,8 +72,7 @@ Learn about composition vs. inheritance and the Flutter way of creating custom U
 
 Understand the difference between const and final in Dart and when to use each.
 
-![2023-07-09 23_24_17-Greenshot](https://github.com/ahmadrezadehghan/experimental/assets/138360464/dc046269-6c28-43c9-ac23-b3910f05beb3)
-
+```
 Packages Used
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
@@ -92,7 +96,7 @@ Packages Used
   custom_check_box: ^0.0.4
   flutter_colorpicker: ^1.0.3
   shared_preferences: ^2.2.0
-
+```
 Before run project, execute commands:
 
 flutter clean
