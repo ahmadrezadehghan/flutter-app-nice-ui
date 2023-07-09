@@ -1,4 +1,6 @@
 
+![2023-07-09 23_24_17-Greenshot](https://github.com/ahmadrezadehghan/experimental/assets/138360464/dc046269-6c28-43c9-ac23-b3910f05beb3)
+
 # experimental
 
 ⭐️this is a flutter experimental app⭐️
@@ -12,15 +14,12 @@ and at the end of the search part that includes a search page similar to social 
 ..whats on this package?
 
 - ⭐️login/Register page
-
 - ⭐️homescreen
-
 - ⭐️searchscreen
-
 - ⭐️peofilescreen
-
+- 
+ ![Screenshot_1688926123](https://github.com/ahmadrezadehghan/flutter-app-nice-ui/assets/138360464/1a0dc786-c9f7-46d5-b42d-392336ff4c1f)
 - ⭐️settings
-
 - ⭐️theme
 - ⭐️darkmode/lightmode
 - ⭐️notificationopsions
@@ -29,14 +28,14 @@ and at the end of the search part that includes a search page similar to social 
 - ⭐️exam panel
 - ⭐️learning panel
 - ⭐️about app panel
+ ![Screenshot_1688926530](https://github.com/ahmadrezadehghan/flutter-app-nice-ui/assets/138360464/d2654eec-32ec-42ab-a83f-454a3501ffad)
+
 - ⭐️logs panel
 - ⭐️news panel
 - ⭐️projects
 - ⭐️resume
 - ⭐️many more!
 
-
-![2023-07-09 23_24_17-Greenshot](https://github.com/ahmadrezadehghan/experimental/assets/138360464/dc046269-6c28-43c9-ac23-b3910f05beb3)
 
 Lessons Learned
 
