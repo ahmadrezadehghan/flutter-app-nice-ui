@@ -11,22 +11,39 @@ and at the end of the search part that includes a search page similar to social 
 
 ..whats on this package?
 ⭐️login/Register page
+
 ⭐️homescreen
+
 ⭐️searchscreen
+
 ⭐️peofilescreen
+
 ⭐️settings
+
 ⭐️theme
+
 ⭐️darkmode/lightmode
+
 ⭐️notificationopsions
+
 ⭐️ticketing/massaging panel
+
 ⭐️counseling panel
+
 ⭐️exam panel
+
 ⭐️learning panel
+
 ⭐️about app panel
+
 ⭐️logs panel
+
 ⭐️news panel
+
 ⭐️projects
+
 ⭐️resume
+
 ⭐️many more!
 
 Lessons Learned
