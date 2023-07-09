@@ -1,5 +1,8 @@
 
 # experimental
+
+this is a flutter experimental app
+
 This repository is about a useful application that has many educational aspects.
 “This software is designed for Flutter training purposes and does not have a backend.
 It consists of four parts: login/registration, profile and settings, 
