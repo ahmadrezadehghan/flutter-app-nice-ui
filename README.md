@@ -31,15 +31,25 @@ and at the end of the search part that includes a search page similar to social 
 
 Lessons Learned
 How to use Flutter themes.
+
 How to create multi-page apps using Flutter Routes and Navigator.
+
 How to extract and refactor Flutter Widgets with a click of the button.
+
 How to pass functions as parameters and fields.
+
 How to use the GestureDetector Widget to detect more than just a tap.
+
 How to use custom colour palettes by using hex codes.
+
 How to customise Flutter Widgets to achieve a specific design style.
+
 Understand Dart Enums and the Ternary Operator.
+
 Learn about composition vs. inheritance and the Flutter way of creating custom UI.
+
 Understand the difference between const and final in Dart and when to use each.
+
 ![2023-07-09 23_24_17-Greenshot](https://github.com/ahmadrezadehghan/experimental/assets/138360464/dc046269-6c28-43c9-ac23-b3910f05beb3)
 
 Packages Used
